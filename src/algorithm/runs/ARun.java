@@ -16,6 +16,8 @@ public abstract class ARun implements IRun
     public ARun(ERun eventType, IEvent event, IEvent overshootEvent)
     {
         this.eventType = eventType;
+        this.event = event;
+        this.overshootEvent = overshootEvent;
     }
 
     public ERun getEventType()
@@ -51,5 +53,14 @@ public abstract class ARun implements IRun
     @Override
     public final int getTotalMove() {
         return event.getTotalMove() + overshootEvent.getTotalMove();
+    }
+
+    @Override
+    public String toString() {
+        return "ARun{" +
+                "eventType=" + eventType +
+                ", event=" + event.toString() +
+                ", overshootEvent=" + overshootEvent.toString() +
+                '}';
     }
 }

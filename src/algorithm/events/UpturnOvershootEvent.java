@@ -9,9 +9,9 @@ public class UpturnOvershootEvent implements IEvent
 {
 
     private int     startingPointIndex;
-    private Price   startingPointPrice;
+    private Price startingPointPrice;
     private int     endingPointIndex;
-    private Price   endingPointPrice;
+    private Price endingPointPrice;
 
     public UpturnOvershootEvent(int initialIndex, Price initialPrice)
     {
@@ -63,5 +63,16 @@ public class UpturnOvershootEvent implements IEvent
     public int getTotalMove()
     {
         return endingPointIndex - startingPointIndex;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "UpturnOvershootEvent{" +
+                "startingPointIndex=" + startingPointIndex +
+                ", startingPointPrice=" + startingPointPrice +
+                ", endingPointIndex=" + endingPointIndex +
+                ", endingPointPrice=" + endingPointPrice +
+                '}';
     }
 }

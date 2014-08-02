@@ -64,4 +64,15 @@ public class UpturnEvent implements IEvent
     {
         return endingPointIndex - startingPointIndex;
     }
+
+    @Override
+    public String toString()
+    {
+        return "UpturnEvent{" +
+                "startingPointIndex=" + startingPointIndex +
+                ", startingPointPrice=" + startingPointPrice +
+                ", endingPointIndex=" + endingPointIndex +
+                ", endingPointPrice=" + endingPointPrice +
+                '}';
+    }
 }

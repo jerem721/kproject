@@ -9,7 +9,7 @@ import algorithm.events.DownturnOvershootEvent;
  */
 public class DownwardRun extends ARun {
 
-    private Price   lowPrice;
+    private Price lowPrice;
 
     public DownwardRun(int initialIndex, Price initialPrice) {
         super(ERun.DOWNWARD_RUN,
@@ -33,5 +33,14 @@ public class DownwardRun extends ARun {
     public final void updateLowPrice(Price price)
     {
         lowPrice = price;
+    }
+
+    @Override
+    public String toString() {
+        return "UpwardRun{" +
+                event.toString() +
+                ", " + overshootEvent.toString() +
+                ", LowPrice=" + lowPrice +
+                '}';
     }
 }

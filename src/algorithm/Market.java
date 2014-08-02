@@ -1,6 +1,6 @@
 package algorithm;
 
-import sun.jvm.hotspot.oops.Mark;
+import algorithm.Price;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +41,10 @@ public class Market {
             stocks.add(new Price(price));
     }
 
-    public Double getPrice(int index)
+    public Price getPrice(int index)
     {
         if (stocks != null && index <= stocks.size())
-            return stocks.get(index).getPrice();
+            return stocks.get(index);
         return null;
     }
 
@@ -64,6 +64,13 @@ public class Market {
     public int getIndex()
     {
         return index;
+    }
+
+    public boolean isNext()
+    {
+        if (index < stocks.size())
+            return true;
+        return false;
     }
 
     public void resetMarket()

@@ -9,7 +9,7 @@ import algorithm.events.UpturnOvershootEvent;
  */
 public class UpwardRun extends ARun {
 
-    private Price       highPrice;
+    private Price highPrice;
 
     public UpwardRun(int initialIndex, Price initialPrice) {
         super(ERun.UPWARD_RUN,
@@ -33,5 +33,14 @@ public class UpwardRun extends ARun {
     public final void updateHighPrice(Price price)
     {
         highPrice = price;
+    }
+
+    @Override
+    public String toString() {
+        return "UpwardRun{" +
+                event.toString() +
+                ", " + overshootEvent.toString() +
+                ", HighPrice=" + highPrice +
+                '}';
     }
 }

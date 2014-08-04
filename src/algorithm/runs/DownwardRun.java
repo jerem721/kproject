@@ -20,14 +20,14 @@ public class DownwardRun extends ARun {
 
     @Override
     public boolean isDirectionalChange(Price current, double threshold) {
-        return current.getPrice() >= lowPrice.getPrice() * (1.0 - (threshold * 100));
+        return current.getPrice() >= lowPrice.getPrice() * (1.0 + (threshold / 100.0));
     }
 
     public final boolean isLowestPrice(Price price)
     {
         if (lowPrice == null)
-            return true;
-        return price.getPrice() > lowPrice.getPrice();
+            return false;
+        return price.getPrice() < lowPrice.getPrice();
     }
 
     public final void updateLowPrice(Price price)
@@ -37,7 +37,7 @@ public class DownwardRun extends ARun {
 
     @Override
     public String toString() {
-        return "UpwardRun{" +
+        return "DownwardRun{" +
                 event.toString() +
                 ", " + overshootEvent.toString() +
                 ", LowPrice=" + lowPrice +

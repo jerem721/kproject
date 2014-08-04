@@ -20,12 +20,12 @@ public abstract class ARun implements IRun
         this.overshootEvent = overshootEvent;
     }
 
-    public ERun getEventType()
+    public ERun getRunType()
     {
         return eventType;
     }
 
-    public void setEventType(ERun eventType)
+    public void setRunType(ERun eventType)
     {
         this.eventType = eventType;
     }
@@ -63,4 +63,6 @@ public abstract class ARun implements IRun
                 ", overshootEvent=" + overshootEvent.toString() +
                 '}';
     }
+
+
 }

@@ -20,13 +20,13 @@ public class UpwardRun extends ARun {
 
     @Override
     public final boolean isDirectionalChange(Price current, double threshold) {
-        return current.getPrice() <= highPrice.getPrice() * (1.0 - (threshold * 100));
+        return current.getPrice() <= highPrice.getPrice() * (1.0 - (threshold / 100.0));
     }
 
     public final boolean isHighestPrice(Price price)
     {
         if (highPrice == null)
-            return true;
+            return false;
         return price.getPrice() > highPrice.getPrice();
     }
 

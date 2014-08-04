@@ -6,7 +6,7 @@ public class Main {
 
 
         if (args.length < 3)
-            System.out.println("./DirectionChanges <inputFile> <outputFile> r% [r%]");
+            System.out.println("./DirectionChanges <inputFile> <outputFile directory> r% [r%]");
         else
         {
             directionalChanges = new DirectionalChanges(args[0], args[1], Arrays.copyOfRange(args, 2, args.length));

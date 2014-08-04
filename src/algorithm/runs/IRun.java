@@ -13,7 +13,7 @@ public interface IRun
     public IEvent   getOvershootEvent();
 
     public int      getDirectionalChangeIndex();
-    public Price getDirectionalChangePrice();
+    public Price    getDirectionalChangePrice();
     public int      getTotalMove();
 
     public boolean  isDirectionalChange(Price current, double threshold);

@@ -48,7 +48,7 @@ public class Market {
         return null;
     }
 
-    public Double getNextPrice()
+    public Price nextPrice()
     {
         Price  price;
 
@@ -56,9 +56,22 @@ public class Market {
         {
             price = stocks.get(index);
             index++;
-            return price.getPrice();
+            return price;
         }
         return null;
+    }
+
+    public int getNextIndex(){
+        if (index < stocks.size())
+            return index + 1;
+        return index;
+    }
+
+    public int getPreviousIndex()
+    {
+        if (index == 0)
+            return 0;
+        return index - 1;
     }
 
     public int getIndex()

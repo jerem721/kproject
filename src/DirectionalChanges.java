@@ -1,6 +1,5 @@
-import algorithm.Algorithm;
 import algorithm.Market;
-import algorithm.events.Algorithm2;
+import algorithm.Algorithm2;
 import algorithm.runs.IRun;
 import file.ReaderFile;
 import file.WriterFile;

@@ -1,7 +1,11 @@
-package algorithm.events;
+package algorithm;
 
 import algorithm.Market;
 import algorithm.Price;
+import algorithm.events.DownturnEvent;
+import algorithm.events.DownturnOvershootEvent;
+import algorithm.events.UpturnEvent;
+import algorithm.events.UpturnOvershootEvent;
 import algorithm.runs.*;
 
 /**
@@ -17,10 +21,10 @@ public class Algorithm2 {
     private UpwardRun                       upwardRun;
     private DownwardRun                     downwardRun;
 
-    private UpturnEvent                     upturnEvent;
-    private UpturnOvershootEvent            upturnOvershootEvent;
-    private DownturnEvent                   downturnEvent;
-    private DownturnOvershootEvent          downturnOvershootEvent;
+    private UpturnEvent upturnEvent;
+    private UpturnOvershootEvent upturnOvershootEvent;
+    private DownturnEvent downturnEvent;
+    private DownturnOvershootEvent downturnOvershootEvent;
 
     private ARun                            currentRun;
 

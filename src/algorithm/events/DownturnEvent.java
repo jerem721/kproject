@@ -62,7 +62,7 @@ public class DownturnEvent implements IEvent
     @Override
     public int getTotalMove()
     {
-        return endingPointIndex - startingPointIndex;
+        return endingPointIndex - startingPointIndex + 1;
     }
 
     @Override

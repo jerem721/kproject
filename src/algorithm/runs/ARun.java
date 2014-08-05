@@ -35,9 +35,17 @@ public abstract class ARun implements IRun
         return event;
     }
 
+    public void setEvent(IEvent event){
+        this.event = event;
+    }
+
     @Override
     public IEvent getOvershootEvent() {
         return overshootEvent;
+    }
+
+    public void setOvershootEvent(IEvent event){
+       this.overshootEvent = event;
     }
 
     @Override
@@ -52,7 +60,13 @@ public abstract class ARun implements IRun
 
     @Override
     public final int getTotalMove() {
-        return event.getTotalMove() + overshootEvent.getTotalMove();
+        int     total = 0;
+
+        if (event != null)
+            total += event.getTotalMove();
+        if (overshootEvent != null)
+            total += overshootEvent.getTotalMove();
+        return total;
     }
 
     @Override

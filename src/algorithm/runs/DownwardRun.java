@@ -12,9 +12,9 @@ public class DownwardRun extends ARun {
     private Price lowPrice;
 
     public DownwardRun(int initialIndex, Price initialPrice) {
-        super(ERun.DOWNWARD_RUN,
-                new DownturnEvent(initialIndex, initialPrice),
-                new DownturnOvershootEvent(initialIndex, initialPrice));
+        super(ERun.DOWNWARD_RUN, null, null);
+                //new DownturnEvent(initialIndex, initialPrice),
+                //new DownturnOvershootEvent(initialIndex, initialPrice));
         this.lowPrice = initialPrice;
     }
 

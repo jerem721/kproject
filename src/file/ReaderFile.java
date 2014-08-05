@@ -1,20 +1,20 @@
 package file;
 
-import javafx.util.converter.NumberStringConverter;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by jerem on 01/08/14.
  */
 public class ReaderFile extends AFile<FileReader> {
 
-    private Hashtable<Integer, String>       hashTable;
+    private TreeMap<Integer, String> hashTable;
 
     public ReaderFile(String filePath)
     {
@@ -42,13 +42,13 @@ public class ReaderFile extends AFile<FileReader> {
             }
     }
 
-    public Hashtable read()
+    public TreeMap read()
     {
         BufferedReader      in;
         String              line;
         int                 index;
 
-        hashTable = new Hashtable<Integer, String>();
+        hashTable = new TreeMap<Integer, String>();
         if (getFileStream() != null)
         {
             in = new BufferedReader(getFileStream());
@@ -67,7 +67,7 @@ public class ReaderFile extends AFile<FileReader> {
         return hashTable;
     }
 
-    public Hashtable<Integer, Double> convertStringToDouble()
+   /* public Hashtable<Integer, Double> convertStringToDouble()
     {
         Hashtable<Integer, Double>   table;
 
@@ -78,8 +78,8 @@ public class ReaderFile extends AFile<FileReader> {
             table.put(field.getKey(), Double.parseDouble(field.getValue()));
         return table;
     }
-
-    public Hashtable    getHashTable()
+    */
+    public TreeMap    getHashTable()
     {
         return this.hashTable;
     }

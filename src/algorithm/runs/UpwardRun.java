@@ -12,9 +12,9 @@ public class UpwardRun extends ARun {
     private Price highPrice;
 
     public UpwardRun(int initialIndex, Price initialPrice) {
-        super(ERun.UPWARD_RUN,
-                new UpturnEvent(initialIndex, initialPrice),
-                new UpturnOvershootEvent(initialIndex, initialPrice));
+        super(ERun.UPWARD_RUN, null, null);
+                //new UpturnEvent(initialIndex, initialPrice),
+                //new UpturnOvershootEvent(initialIndex, initialPrice));
         this.highPrice = initialPrice;
     }
 

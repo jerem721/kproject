@@ -12,11 +12,13 @@ public class Market {
 
     private List<Price>     stocks;
     private int             index;
+    private int             nextIndex;
 
     public Market()
     {
         stocks = new ArrayList<Price>();
         index = 0;
+        nextIndex = 0;
     }
 
     public Market(List stocks)
@@ -52,17 +54,19 @@ public class Market {
     {
         Price  price;
 
-        if (stocks != null && index <= stocks.size())
+        if (stocks != null && nextIndex <= stocks.size())
         {
-            price = stocks.get(index);
-            index++;
+
+            price = stocks.get(nextIndex);
+            nextIndex++;
+            index = nextIndex - 1;
             return price;
         }
         return null;
     }
 
     public int getNextIndex(){
-        if (index < stocks.size())
+        if (index < (stocks.size() - 1))
             return index + 1;
         return index;
     }
@@ -81,7 +85,7 @@ public class Market {
 
     public boolean isNext()
     {
-        if (index < stocks.size())
+        if (nextIndex < stocks.size())
             return true;
         return false;
     }

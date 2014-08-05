@@ -53,10 +53,13 @@ public class Algorithm
         }
     }
 
+    private boolean     error = true;
+
     private void upturnEvent(Price currentPrice)
     {
         if (currentRun.isDirectionalChange(currentPrice, threshold) == true)
         {
+            error = true;
             // upward run est fini ici.
             if (listener != null)
                 listener.onUpwardRun(currentRun);
@@ -78,6 +81,8 @@ public class Algorithm
     {
         if (currentRun.isDirectionalChange(currentPrice, threshold) == true)
         {
+            if (error == true)
+                System.out.println("------> Error");
             // downward run est fini ici.
             if (listener != null)
                 listener.onDownwardRun(currentRun);
@@ -89,6 +94,7 @@ public class Algorithm
             //upwardRun.getOvershootEvent().setEndingPoint(market.getNextIndex(), market.getPrice(market.getNextIndex())); // add
         } else if (downwardRun.isLowestPrice(currentPrice) == true)
         {
+            error = false;
             downwardRun.updateLowPrice(currentPrice);
             upwardRun.getEvent().setStartingPoint(market.getIndex(), currentPrice);
             downwardRun.getOvershootEvent().setEndingPoint(market.getPreviousIndex(), market.getPrice(market.getPreviousIndex()));
